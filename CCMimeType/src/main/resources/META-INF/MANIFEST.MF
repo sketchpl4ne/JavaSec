@@ -1,0 +1,23 @@
+Manifest-Version: 1.0
+Main-Class: org.example.demo.DemoApplication
+Class-Path: spring-boot-starter-json-3.1.10.jar spring-aop-6.0.18.jar ht
+ tpclient5-5.2.3.jar httpcore5-h2-5.2.4.jar spring-webmvc-6.0.18.jar spr
+ ing-jcl-6.0.18.jar jna-5.7.0.jar micrometer-commons-1.11.10.jar jackson
+ -core-2.15.4.jar snakeyaml-1.33.jar spring-beans-6.0.18.jar spring-cont
+ ext-6.0.18.jar spring-boot-starter-3.1.10.jar plexus-build-api-0.0.7.ja
+ r antlr4-runtime-4.7.2.jar logback-core-1.4.14.jar jna-platform-5.7.0.j
+ ar spring-boot-starter-tomcat-3.1.10.jar tomlj-1.0.0.jar spring-core-6.
+ 0.18.jar jackson-databind-2.15.4.jar tomcat-embed-el-10.1.19.jar spring
+ -boot-3.1.10.jar plexus-utils-1.5.8.jar jackson-datatype-jsr310-2.15.4.
+ jar spring-boot-maven-plugin-3.1.10.jar commons-compress-1.21.jar sprin
+ g-web-6.0.18.jar slf4j-api-2.0.12.jar jakarta.annotation-api-2.1.1.jar 
+ log4j-to-slf4j-2.20.0.jar jackson-annotations-2.15.4.jar tomcat-embed-w
+ ebsocket-10.1.19.jar spring-boot-starter-logging-3.1.10.jar jsr305-3.0.
+ 2.jar spring-expression-6.0.18.jar logback-classic-1.4.14.jar tomcat-em
+ bed-core-10.1.19.jar commons-collections-3.2.1.jar log4j-api-2.20.0.jar
+  spring-boot-loader-tools-3.1.10.jar spring-boot-autoconfigure-3.1.10.j
+ ar jackson-module-parameter-names-2.15.4.jar jul-to-slf4j-2.0.12.jar ja
+ ckson-datatype-jdk8-2.15.4.jar micrometer-observation-1.11.10.jar sprin
+ g-boot-buildpack-platform-3.1.10.jar httpcore5-5.2.4.jar spring-boot-st
+ arter-web-3.1.10.jar
+
