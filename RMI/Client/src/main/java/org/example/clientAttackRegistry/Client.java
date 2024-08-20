@@ -57,8 +57,8 @@ public class Client {
         Field[] fields_0 = registry.getClass().getSuperclass().getSuperclass().getDeclaredFields();
         fields_0[0].setAccessible(true);
         UnicastRef ref = (UnicastRef) fields_0[0].get(registry);
+        
         //获取operations
-
         Field[] fields_1 = registry.getClass().getDeclaredFields();
         fields_1[0].setAccessible(true);
         Operation[] operations = (Operation[]) fields_1[0].get(registry);
